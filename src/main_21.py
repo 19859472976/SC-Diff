@@ -125,7 +125,7 @@ def test(args, model, model_name,
 
 def write_pred_text(pred,ground,test_snap,time,d,epoch):
     
-    with open("/data2/shenjunfeng/DiffuTKG-main/pred_result/{}/pred_{}.txt".format(d,time),'+a') as file:
+    with open("./pred_result/{}/pred_{}.txt".format(d,time),'+a') as file:
         file.writelines("\n---------{}-{}------------".format(epoch,test_snap))
         file.writelines("\n"+str(torch.argmax(pred[:50],-1).cpu().numpy().tolist()))
         file.writelines("\n"+str(ground[:,2][:50].cpu().numpy().tolist()))
